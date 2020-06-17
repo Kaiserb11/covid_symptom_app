@@ -45,8 +45,8 @@ class _SignupPageState extends State<SignupPage>{
               TextField(
                 decoration: InputDecoration(
                   contentPadding: EdgeInsets.only(top: 18),
-                  hintText: 'email',
-                  hintStyle: TextStyle(
+                  labelText: 'email',
+                  labelStyle: TextStyle(
                     fontSize: 20,
                     fontFamily: 'Montserrat',
                     fontWeight: FontWeight.bold,
@@ -61,8 +61,8 @@ class _SignupPageState extends State<SignupPage>{
               TextField(
                 decoration: InputDecoration(
                   contentPadding: EdgeInsets.only(top: 18),
-                  hintText: 'password',
-                  hintStyle: TextStyle(
+                  labelText: 'password',
+                  labelStyle: TextStyle(
                     fontSize: 20,
                     fontFamily: 'Montserrat',
                     fontWeight: FontWeight.bold,
