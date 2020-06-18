@@ -1,5 +1,5 @@
+import 'package:covid_symptom_app/pages/navbar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:covid_symptom_app/pages/signup.dart';
 
 class LoginPage extends StatefulWidget {
@@ -99,7 +99,12 @@ class _LoginPageState extends State<LoginPage>{
                         color: Colors.green,
                         elevation: 7.0,
                         child: GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => BottomNavPage()),
+                      );
+                          },
                           child: Center(
                             child: Text(
                               'LOGIN',
