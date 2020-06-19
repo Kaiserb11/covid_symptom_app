@@ -133,15 +133,29 @@ SliverToBoxAdapter _buildTestReport(double screenHeight) {
     child: Container(
        margin: const EdgeInsets.symmetric(
          vertical: 20,
-         horizontal: 20,
+         horizontal: 12,
        ),
        padding: const EdgeInsets.all(10),
        height: screenHeight*0.15,
        decoration: BoxDecoration(
          color: Colors.yellowAccent[700],
-         borderRadius: BorderRadius.circular(20)
-       )
-       
+         borderRadius: BorderRadius.circular(20),
+       ),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: <Widget>[
+        SizedBox(height: screenHeight*0.01,),
+        Text(
+          'PREVIOUS TEST SUMMARY',
+          style: TextStyle(
+            fontFamily: 'Montserrat',
+            fontSize: 19,
+            fontWeight: FontWeight.bold,
+            color: Colors.blueGrey[700]
+          ),
+        ),
+      ],
+    ),
     ),
   );
 }

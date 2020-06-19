@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:covid_symptom_app/pages/home_page.dart';
+import 'package:covid_symptom_app/pages/stat_page.dart';
 
 class BottomNavPage extends StatefulWidget {
   @override
@@ -9,7 +10,7 @@ class BottomNavPage extends StatefulWidget {
 class _BottomNavPageState extends State<BottomNavPage> {
   final List _pages = [
     HomePage(),
-    Scaffold(),
+    StatPage(),
     Scaffold(),
     Scaffold(),
   ];
