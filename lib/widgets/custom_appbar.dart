@@ -5,8 +5,18 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       automaticallyImplyLeading: false,
-      backgroundColor: Colors.blueGrey[900],
+      backgroundColor: Colors.blueGrey[700],
       elevation: 0.0,
+      centerTitle: true,
+      title: Text(
+        'AYUSH BHARAT',
+        style: TextStyle(
+          color: Colors.yellowAccent[700],
+          fontWeight: FontWeight.bold,
+          fontFamily: 'Montserrat',
+          fontSize: 23,
+        ),
+      ),
       leading: IconButton(
         color: Colors.yellowAccent[700],
         icon: const Icon(Icons.menu),

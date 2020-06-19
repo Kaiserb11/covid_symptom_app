@@ -12,6 +12,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
+      
       appBar: CustomAppBar(),
       body: CustomScrollView(
         physics: ClampingScrollPhysics(),
@@ -29,54 +30,47 @@ SliverToBoxAdapter _buildHeader(double screenHeight) {
     child: Container(
       padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
       decoration: BoxDecoration(
-        color: Colors.blueGrey[900],
+        color: Colors.blueGrey[700],
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(40.0),
           bottomRight: Radius.circular(40.0),
         ),
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Text(
-            'AYUSH BHARAT',
-            style: TextStyle(
-              color: Colors.yellowAccent[700],
-              fontFamily: 'Montserrat',
-              fontSize: 25,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          SizedBox(height: screenHeight*0.03,),
+          
+          SizedBox(height: screenHeight*0.01,),
           Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Text(
                 'Worried about being COVID+ ?',
                 style: TextStyle(
                   color: Colors.yellowAccent[700],
                   fontWeight: FontWeight.w600,
-                  fontSize: 20,
+                  fontSize: 22,
                   fontFamily: 'Montserrat',
                 ),
               )
             ],
             ),
-            SizedBox(height: screenHeight*0.01,),
+            SizedBox(height: screenHeight*0.02,),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                'If you feel sick with any COVID-19 symptoms, please take our test immediately or call the authorities...',
+                'Take our test to know more',
                 style: TextStyle(
                   color: Colors.yellowAccent[700],
-                  fontSize: 15,
+                  fontSize: 17,
                   fontFamily: 'Montserrat',
+                  fontWeight: FontWeight.w600,
                 ),
               )
             ],
             ),
-            SizedBox(height: screenHeight * 0.03),
+            SizedBox(height: screenHeight * 0.05),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
@@ -137,7 +131,17 @@ SliverToBoxAdapter _buildHeader(double screenHeight) {
 SliverToBoxAdapter _buildTestReport(double screenHeight) {
   return SliverToBoxAdapter(
     child: Container(
-
+       margin: const EdgeInsets.symmetric(
+         vertical: 20,
+         horizontal: 20,
+       ),
+       padding: const EdgeInsets.all(10),
+       height: screenHeight*0.15,
+       decoration: BoxDecoration(
+         color: Colors.yellowAccent[700],
+         borderRadius: BorderRadius.circular(20)
+       )
+       
     ),
   );
 }

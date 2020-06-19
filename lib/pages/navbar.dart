@@ -27,8 +27,8 @@ class _BottomNavPageState extends State<BottomNavPage> {
         backgroundColor: Colors.transparent,
         showSelectedLabels: false,
         showUnselectedLabels: false,
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.yellowAccent[700],       
+        selectedItemColor: Colors.yellowAccent[700],
+        unselectedItemColor: Colors.blueGrey[700],       
         elevation: 0.0,
         items: [Icons.home, Icons.insert_chart, Icons.event_note, Icons.person]
             .asMap()
@@ -43,7 +43,7 @@ class _BottomNavPageState extends State<BottomNavPage> {
                       ),
                       decoration: BoxDecoration(
                         color: _currentIndex == key
-                            ? Colors.yellowAccent[700]
+                            ? Colors.blueGrey[700]
                             : Colors.transparent,
                         borderRadius: BorderRadius.circular(20.0),
                       ),
