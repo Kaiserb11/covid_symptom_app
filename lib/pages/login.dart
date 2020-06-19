@@ -34,7 +34,7 @@ class _LoginPageState extends State<LoginPage>{
                       fontFamily: 'bebas',
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
-                      color: Colors.green
+                      color: Colors.green[600]
                     ),
                 ),
               )
@@ -54,7 +54,7 @@ class _LoginPageState extends State<LoginPage>{
                     color: Colors.grey
                   ),
                   focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.green)
+                    borderSide: BorderSide(color: Colors.green[600])
                   )
                 ),
               ),
@@ -70,7 +70,7 @@ class _LoginPageState extends State<LoginPage>{
                     color: Colors.grey
                   ),
                   focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.green)
+                    borderSide: BorderSide(color: Colors.green[600])
                   )
                 ),
                 obscureText: true,
@@ -83,7 +83,7 @@ class _LoginPageState extends State<LoginPage>{
                   child: Text(
                     "FORGOT PASSWORD",
                     style: TextStyle(
-                      color: Colors.green,
+                      color: Colors.green[600],
                       fontFamily: 'Montserrat',
                       fontWeight: FontWeight.bold,
                     ),
@@ -96,7 +96,7 @@ class _LoginPageState extends State<LoginPage>{
                       child: Material(
                         borderRadius: BorderRadius.circular(20.0),
                         shadowColor: Colors.greenAccent,
-                        color: Colors.green,
+                        color: Colors.green[600],
                         elevation: 7.0,
                         child: GestureDetector(
                           onTap: () {
@@ -142,7 +142,7 @@ class _LoginPageState extends State<LoginPage>{
                       'REGISTER',
                       style: TextStyle(
                         fontSize: 20,
-                        color: Colors.green,
+                        color: Colors.green[600],
                         fontFamily: 'Montserrat',
                         fontWeight: FontWeight.bold,
                         

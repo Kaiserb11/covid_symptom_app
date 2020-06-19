@@ -33,7 +33,7 @@ class _SignupPageState extends State<SignupPage>{
                       fontFamily: 'bebas',
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
-                      color: Colors.green
+                      color: Colors.green[600]
                     ),
                 ),
               )
@@ -53,7 +53,7 @@ class _SignupPageState extends State<SignupPage>{
                     color: Colors.grey
                   ),
                   focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.green)
+                    borderSide: BorderSide(color: Colors.green[600])
                   )
                 ),
               ),
@@ -69,7 +69,7 @@ class _SignupPageState extends State<SignupPage>{
                     color: Colors.grey
                   ),
                   focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.green)
+                    borderSide: BorderSide(color: Colors.green[600])
                   )
                 ),
                 obscureText: true,
@@ -81,7 +81,7 @@ class _SignupPageState extends State<SignupPage>{
                       child: Material(
                         borderRadius: BorderRadius.circular(20.0),
                         shadowColor: Colors.greenAccent,
-                        color: Colors.green,
+                        color: Colors.green[600],
                         elevation: 7.0,
                         child: GestureDetector(
                           onTap: () {},
@@ -119,7 +119,7 @@ class _SignupPageState extends State<SignupPage>{
                       'LOGIN',
                       style: TextStyle(
                         fontSize: 20,
-                        color: Colors.green,
+                        color: Colors.green[600],
                         fontFamily: 'Montserrat',
                         fontWeight: FontWeight.bold,
                         

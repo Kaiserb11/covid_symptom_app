@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:covid_symptom_app/pages/home_page.dart';
 
 class BottomNavPage extends StatefulWidget {
   @override
@@ -7,7 +8,7 @@ class BottomNavPage extends StatefulWidget {
 
 class _BottomNavPageState extends State<BottomNavPage> {
   final List _pages = [
-    Scaffold(),
+    HomePage(),
     Scaffold(),
     Scaffold(),
     Scaffold(),
@@ -23,13 +24,13 @@ class _BottomNavPageState extends State<BottomNavPage> {
         currentIndex: _currentIndex,
         onTap: (index) => setState(() => _currentIndex = index),
         type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.transparent,
         showSelectedLabels: false,
         showUnselectedLabels: false,
         selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.grey,
+        unselectedItemColor: Colors.yellowAccent[700],       
         elevation: 0.0,
-        items: [Icons.home, Icons.insert_chart, Icons.event_note, Icons.add_call]
+        items: [Icons.home, Icons.insert_chart, Icons.event_note, Icons.person]
             .asMap()
             .map((key, value) => MapEntry(
                   key,
@@ -42,7 +43,7 @@ class _BottomNavPageState extends State<BottomNavPage> {
                       ),
                       decoration: BoxDecoration(
                         color: _currentIndex == key
-                            ? Colors.blue[600]
+                            ? Colors.yellowAccent[700]
                             : Colors.transparent,
                         borderRadius: BorderRadius.circular(20.0),
                       ),
