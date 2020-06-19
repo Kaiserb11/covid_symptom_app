@@ -16,7 +16,8 @@ class _HomePageState extends State<HomePage> {
       body: CustomScrollView(
         physics: ClampingScrollPhysics(),
         slivers: <Widget>[
-          _buildHeader(screenHeight)
+          _buildHeader(screenHeight),
+          _buildTestReport(screenHeight)
         ],
       ),
     );
@@ -51,7 +52,7 @@ SliverToBoxAdapter _buildHeader(double screenHeight) {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                'Are you feeling sick?',
+                'Worried about being COVID+ ?',
                 style: TextStyle(
                   color: Colors.yellowAccent[700],
                   fontWeight: FontWeight.w600,
@@ -85,7 +86,7 @@ SliverToBoxAdapter _buildHeader(double screenHeight) {
                     horizontal: 20.0,
                   ),
                   onPressed: () {},
-                  color: Colors.red,
+                  color: Colors.blue,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0),
                   ),
@@ -108,16 +109,16 @@ SliverToBoxAdapter _buildHeader(double screenHeight) {
                     horizontal: 20.0,
                   ),
                   onPressed: () {},
-                  color: Colors.blue,
+                  color: Colors.red,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0),
                   ),
                   icon: const Icon(
-                    Icons.chat_bubble,
+                    Icons.add_circle_outline,
                     color: Colors.white,
                   ),
                   label: Text(
-                    'Send SMS',
+                    'Take Test',
                     style: TextStyle(
                       fontSize: 16.0,
                       fontWeight: FontWeight.w600,
@@ -129,6 +130,14 @@ SliverToBoxAdapter _buildHeader(double screenHeight) {
             ),
         ],
       ),
+    ),
+  );
+}
+
+SliverToBoxAdapter _buildTestReport(double screenHeight) {
+  return SliverToBoxAdapter(
+    child: Container(
+
     ),
   );
 }
