@@ -26,32 +26,47 @@ class _StatPageState extends State<StatPage> {
 
 SliverToBoxAdapter _buildHeader(double screenHeight) {
   return SliverToBoxAdapter(
-    child: Container(
-      padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
-      decoration: BoxDecoration(
-        color: Colors.blueGrey[700],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[   
-          SizedBox(height: screenHeight*0.03,),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: <Widget>[
+        Container(
+          child: Stack(
             children: <Widget>[
-              Text(
-                'Covid-19 Cases Overview',
-                style: TextStyle(
-                  color: Colors.yellowAccent[700],
-                  fontWeight: FontWeight.w400,
-                  fontSize: 22,
-                  fontFamily:'Montserrat',
+              Container(
+                padding: EdgeInsets.fromLTRB(205,0,205,70),
+                color: Colors.blueGrey[700],
+                child: Column(
+                  children: <Widget>[
+                    SizedBox(height: screenHeight * 0.15),
+                  ],
                 ),
-              )
+              ),
+              Container(
+                padding: EdgeInsets.fromLTRB(16.0, 15.0, 0.0, 0.0),
+                  child: Text(
+                    'Covid-19 stats overview',
+                    style: TextStyle(
+                      color: Colors.yellowAccent[700],
+                      fontFamily: 'Montserrat',
+                      fontSize: 22.0, 
+                      fontWeight: FontWeight.w500)),
+              ),
+              Container(
+                padding: EdgeInsets.fromLTRB(16, 35, 0, 0),
+                margin: const EdgeInsets.symmetric(
+                  vertical: 70,
+                  horizontal: 14,
+                ),
+                height: screenHeight*0.30,
+                decoration: BoxDecoration(
+                  color: Colors.yellowAccent[700],
+                  borderRadius: BorderRadius.circular(20),
+                ),
+              ),
             ],
-            ),
-          SizedBox(height: screenHeight*0.1,),
-        ],
-      ),
+          ),
+        )
+      ],
     ),
   );
 }
