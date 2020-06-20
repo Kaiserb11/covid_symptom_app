@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:covid_symptom_app/widgets/custom_appbar.dart';
-
+import 'package:http/http.dart' as http;
+import 'dart:async';
+import 'dart:convert';
 
 class StatPage extends StatefulWidget {
   @override
@@ -20,6 +22,7 @@ class _StatPageState extends State<StatPage> {
           
         ],
       ),
+      
     );
 }
 }
@@ -33,7 +36,7 @@ SliverToBoxAdapter _buildHeader(double screenHeight) {
           child: Stack(
             children: <Widget>[
               Container(
-                padding: EdgeInsets.fromLTRB(205,0,205,75),
+                padding: EdgeInsets.fromLTRB(207,0,205,53),
                 color: Colors.blueGrey[700],
                 child: Column(
                   children: <Widget>[
@@ -42,21 +45,18 @@ SliverToBoxAdapter _buildHeader(double screenHeight) {
                 ),
               ),
               Container(
-                padding: EdgeInsets.fromLTRB(16.0, 15.0, 0.0, 0.0),
+                padding: EdgeInsets.fromLTRB(16.0, 10.0, 0.0, 0.0),
                   child: Text(
                     'Covid-19 stats overview',
                     style: TextStyle(
                       color: Colors.yellowAccent[700],
                       fontFamily: 'Montserrat',
-                      fontSize: 22.0, 
-                      fontWeight: FontWeight.w500)),
+                      fontSize: 20.0, 
+                      fontWeight: FontWeight.w400)),
               ),
               Container(
-                padding: EdgeInsets.fromLTRB(16, 20, 16, 0),
-                margin: const EdgeInsets.symmetric(
-                  vertical: 60,
-                  horizontal: 14,
-                ),
+                padding: EdgeInsets.fromLTRB(16, 16, 16, 0),
+                margin: const EdgeInsets.fromLTRB(14, 40, 14, 10),
                 height: screenHeight*0.36,
                 decoration: BoxDecoration(
                   boxShadow: [
@@ -261,3 +261,35 @@ SliverToBoxAdapter _buildHeader(double screenHeight) {
     ),
   );
 }
+
+class Note {
+  String state;
+  String total;
+  String recovered;
+  String death;
+  
+  Note(this.state, this.total, this.recovered, this.death);
+
+  Note.fromJson(Map<String, dynamic> json) {
+    state = json[1];
+    total = json[5];
+    recovered = json[3];
+    death = json[4];
+  }
+
+}
+
+List<Note> _notes = List<Note>();
+
+Future fechNotes() async{
+  var url = 'http://covid-su.herokuapp.com';
+  var response = await http.get(url);
+
+  var notes = List<Note>();
+  var notesJson = json.decode(response.body);
+  for (var noteJson in notesJson){
+    notes.add(Note.fromJson(noteJson));
+  }
+  return notes;
+}
+
