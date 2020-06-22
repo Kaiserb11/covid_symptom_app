@@ -1,9 +1,7 @@
 import 'package:covid_symptom_app/pages/list_build.dart';
 import 'package:flutter/material.dart';
 import 'package:covid_symptom_app/widgets/custom_appbar.dart';
-import 'package:http/http.dart' as http;
-import 'dart:async';
-import 'dart:convert';
+
 
 class StatPage extends StatefulWidget {
   @override
