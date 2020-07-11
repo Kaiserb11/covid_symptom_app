@@ -19,7 +19,6 @@ class _StatPageState extends State<StatPage> {
   Future getData() async {
     http.Response response = await http.get("http://covid-su.herokuapp.com");
     data = json.decode(response.body);
-    if (!mounted) return;
     setState(() {
       placeData = data['data'];
     });
@@ -136,7 +135,7 @@ class _StatPageState extends State<StatPage> {
                         Container(
                           padding: EdgeInsets.only(top: 10, left: 10,bottom: 10),
                           child: Text(      
-                            "${placeData[3][5]}",
+                            placeData == null ? '0' : "${placeData[3][5]}",
                             style: TextStyle(
                               color: Colors.red[700],
                               fontWeight: FontWeight.bold,
@@ -147,7 +146,7 @@ class _StatPageState extends State<StatPage> {
                         Container(
                           padding: EdgeInsets.only(top: 10,bottom: 10),
                           child: Text(
-                            "${placeData[3][2]}",
+                            placeData == null ? '0' : "${placeData[3][2]}",
                             style: TextStyle(
                               color: Colors.green[700],
                               fontWeight: FontWeight.bold,
@@ -158,7 +157,7 @@ class _StatPageState extends State<StatPage> {
                         Container(
                           padding: EdgeInsets.only(top: 10, right: 30, bottom: 10),
                           child: Text(
-                            "${placeData[3][4]}",
+                            placeData == null ? '0' : "${placeData[3][4]}",
                             style: TextStyle(
                               color: Colors.blueGrey[700],
                               fontWeight: FontWeight.bold,
