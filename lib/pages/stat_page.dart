@@ -1,7 +1,10 @@
-import 'package:covid_symptom_app/pages/list_build.dart';
+import 'package:covid_symptom_app/widgets/list_build.dart';
 import 'package:flutter/material.dart';
 import 'package:covid_symptom_app/widgets/custom_appbar.dart';
-
+import 'package:http/http.dart' as http;
+import 'dart:async';
+import 'dart:convert';
+Timer timer;
 
 class StatPage extends StatefulWidget {
   @override
@@ -9,13 +12,31 @@ class StatPage extends StatefulWidget {
 }
 
 class _StatPageState extends State<StatPage> {
+
+  Map data;
+  List placeData;
+
+  Future getData() async {
+    http.Response response = await http.get("http://covid-su.herokuapp.com");
+    data = json.decode(response.body);
+    if (!mounted) return;
+    setState(() {
+      placeData = data['data'];
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getData();
+  }
   
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold( 
       appBar: CustomAppBar(),
-      body: 
+      body:
         Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
@@ -114,8 +135,8 @@ class _StatPageState extends State<StatPage> {
                       children: <Widget>[
                         Container(
                           padding: EdgeInsets.only(top: 10, left: 10,bottom: 10),
-                          child: Text(
-                            '4904',
+                          child: Text(      
+                            "${placeData[3][5]}",
                             style: TextStyle(
                               color: Colors.red[700],
                               fontWeight: FontWeight.bold,
@@ -126,7 +147,7 @@ class _StatPageState extends State<StatPage> {
                         Container(
                           padding: EdgeInsets.only(top: 10,bottom: 10),
                           child: Text(
-                            '3039',
+                            "${placeData[3][2]}",
                             style: TextStyle(
                               color: Colors.green[700],
                               fontWeight: FontWeight.bold,
@@ -137,7 +158,7 @@ class _StatPageState extends State<StatPage> {
                         Container(
                           padding: EdgeInsets.only(top: 10, right: 30, bottom: 10),
                           child: Text(
-                            '9',
+                            "${placeData[3][4]}",
                             style: TextStyle(
                               color: Colors.blueGrey[700],
                               fontWeight: FontWeight.bold,

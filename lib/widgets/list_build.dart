@@ -3,6 +3,7 @@ import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
 
+
 void main() {
   runApp(MaterialApp(
     home: ListCheck(),
@@ -46,7 +47,6 @@ class _ListCheckState extends State<ListCheck> {
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Row(
-                  
                   children: <Widget>[
                     Container(
                           constraints: BoxConstraints(minWidth: 110, maxWidth: 110),
@@ -104,3 +104,4 @@ class _ListCheckState extends State<ListCheck> {
     );
   }
 }
+
