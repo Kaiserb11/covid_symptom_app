@@ -23,18 +23,19 @@ class _LoginPageState extends State<LoginPage>{
                   style: TextStyle(
                     fontFamily: 'bebas',
                     fontSize: 50,
+                    color: Colors.blueGrey[700],
                     fontWeight: FontWeight.bold
                   ),),
               ),
               Container(
                 padding: EdgeInsets.fromLTRB(60, 150, 0, 0),
                 child:  Text(
-                  "to the fight against covide 19",
+                  "to the fight against covid-19",
                     style: TextStyle(
                       fontFamily: 'bebas',
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
-                      color: Colors.green[600]
+                      color: Colors.yellowAccent[700]
                     ),
                 ),
               )
@@ -50,11 +51,11 @@ class _LoginPageState extends State<LoginPage>{
                   hintStyle: TextStyle(
                     fontSize: 20,
                     fontFamily: 'Montserrat',
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey
+                    fontWeight: FontWeight.w400,
+                    color: Colors.blueGrey[700]
                   ),
                   focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.green[600])
+                    borderSide: BorderSide(color: Colors.yellowAccent[700])
                   )
                 ),
               ),
@@ -66,11 +67,11 @@ class _LoginPageState extends State<LoginPage>{
                   hintStyle: TextStyle(
                     fontSize: 20,
                     fontFamily: 'Montserrat',
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey
+                    fontWeight: FontWeight.w400,
+                    color: Colors.blueGrey[700]
                   ),
                   focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.green[600])
+                    borderSide: BorderSide(color: Colors.yellowAccent[700])
                   )
                 ),
                 obscureText: true,
@@ -83,7 +84,7 @@ class _LoginPageState extends State<LoginPage>{
                   child: Text(
                     "FORGOT PASSWORD",
                     style: TextStyle(
-                      color: Colors.green[600],
+                      color: Colors.yellowAccent[700],
                       fontFamily: 'Montserrat',
                       fontWeight: FontWeight.bold,
                     ),
@@ -96,11 +97,11 @@ class _LoginPageState extends State<LoginPage>{
                       child: Material(
                         borderRadius: BorderRadius.circular(20.0),
                         shadowColor: Colors.greenAccent,
-                        color: Colors.green[600],
+                        color: Colors.yellowAccent[700],
                         elevation: 7.0,
                         child: GestureDetector(
                           onTap: () {
-                            Navigator.push(
+                            Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(builder: (context) => BottomNavPage()),
                       );
@@ -110,7 +111,7 @@ class _LoginPageState extends State<LoginPage>{
                               'LOGIN',
                               style: TextStyle(
                                   fontSize: 19,
-                                  color: Colors.white,
+                                  color: Colors.blueGrey[700],
                                   fontWeight: FontWeight.bold,
                                   fontFamily: 'Montserrat'),
                             ),
@@ -127,7 +128,7 @@ class _LoginPageState extends State<LoginPage>{
                     style: TextStyle(
                       fontFamily: 'Montserrat',
                       fontWeight: FontWeight.bold,
-                      color: Colors.grey,
+                      color: Colors.blueGrey[700],
                       fontSize: 20, ),
                   ),
                   SizedBox(width: 10,),
@@ -142,7 +143,7 @@ class _LoginPageState extends State<LoginPage>{
                       'REGISTER',
                       style: TextStyle(
                         fontSize: 20,
-                        color: Colors.green[600],
+                        color: Colors.yellowAccent[700],
                         fontFamily: 'Montserrat',
                         fontWeight: FontWeight.bold,
                         

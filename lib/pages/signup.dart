@@ -28,7 +28,7 @@ class _SignupPageState extends State<SignupPage>{
               Container(
                 padding: EdgeInsets.fromLTRB(60, 150, 0, 0),
                 child:  Text(
-                  "to the fight against covide 19",
+                  "to the fight against covid-19",
                     style: TextStyle(
                       fontFamily: 'bebas',
                       fontSize: 30,
