@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
 
-Timer timer;
+
 
 class StatPage extends StatefulWidget {
   @override
